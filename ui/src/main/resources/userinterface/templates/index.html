@@ -26,6 +26,20 @@
 <!--         <p>
           <a href="/signup" th:href="@{/signup}" class="btn btn-large btn-success" th:text="#{action.signup}">Sign up</a>
         </p> -->
+        
+        
+    <div class="row" th:each="user : ${users}">
+      <div class="nine columns">
+        <form th:method="put" th:action="@{/}">
+          <input type="hidden" name="id" th:value="${user.id}" />
+          <span th:text="${user.username}"></span>
+        </form>
+      </div>
+    </div>
+        
+        
+        
+        
       </div>
       <div th:replace="fragments/footer :: footer"/>
     </div>
