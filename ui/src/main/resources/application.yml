@@ -1,0 +1,29 @@
+spring:
+  freemarker:
+    enabled: false           # Ignore Eureka dashboard FreeMarker templates
+  thymeleaf:
+    cache: false             # Allow Thymeleaf templates to be reloaded at runtime
+    prefix: classpath:/userinterface/templates/    # Trailing / mandatory
+  mvc:
+    dispatch-options-request: true
+  messages:
+    basename: static/locale/messages
+    encoding: UTF-8
+
+server:
+  port: 8080
+    
+management:
+  security:
+    enabled: false    
+
+logging:
+  level:
+    root: INFO
+    com:
+      airbus:
+        smartdeploy: DEBUG
+
+# Map the error path to error template (for Thymeleaf)
+error:
+  path: /error

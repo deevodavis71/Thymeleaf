@@ -1,0 +1,34 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-table.min.js"></script>
+<!--TODO logService URL should not be hardcoded  -->
+    <script id="websocketSupport" type="text/javascript" src="js/websocketSupport.js" data-wsUrl="ws://localhost:1234/logService"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-table.min.css" rel="stylesheet" />
+<!-- Red background/white text for accordion panel header  -->
+<style type="text/css">
+.panel-default>.panel-heading-custom {
+  background: #ff0000;
+  color: #fff
+}
+</style>
+</head>
+<body>
+    <div th:replace="fragments/header :: header" />
+    <div class="container">
+        <h3 style="padding: 2em 0 0 0">Services: ERROR</h3>
+        <div class="panel-group" id="accordion"></div>
+    </div>
+    <div class="container">
+        <div clas="hero-unit">
+            <span style="padding: 4em 0 0 0"></span>
+            <div id="output"></div>
+        </div>
+    </div>
+    <div th:replace="fragments/footer :: footer" />
+</body>
+</html>
+

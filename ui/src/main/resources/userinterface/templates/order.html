@@ -1,0 +1,38 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-table.min.js"></script>
+    <script src="js/metawidget-core.min.js"></script>
+    <script src="js/metawidget-bootstrap.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/bootstrap-table.min.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div th:replace="fragments/header :: header"/>
+    <div class="container">
+      <h2>Order Information</h2>
+      <table id="mainTable"  class="table table-striped">
+        <thead>
+            <tr>
+                <th data-field="id">Order ID</th>
+                <th data-field="customerName">Customer Name</th>
+                <th data-field="creationTime">Requested On</th>
+                <th data-formatter="operateFormatter" data-events="operateEvents">Actions</th>
+            </tr>
+        </thead>
+      </table>
+      <div>
+          <button id="beginAdd" class="btn btn-large btn-primary">Add</button>
+      </div>
+    </div>
+    <div th:replace="fragments/dialogs:: add-dialog" />
+    <div th:replace="fragments/dialogs:: edit-dialog" />
+    <div th:replace="fragments/footer :: footer"/>
+  </body>
+
+  <script id="restSupport" type="text/javascript" data-apiBase="http://localhost:3333/order-handling" data-apiEntity="order"
+    src="js/restSupport.js" >
+  </script>
+</html>

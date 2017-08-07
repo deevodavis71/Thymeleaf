@@ -1,0 +1,47 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html>
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top" th:fragment="header">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse"
+          data-target=".nav-collapse">
+          <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+            class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">SmartDeploy</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li th:classappend="${module == 'home' ? 'active' : ''}">
+          <a href="#" th:href="@{/}" th:text="#{menu.home}"></a></li>
+          <li th:classappend="${module == 'order' ? 'active' : ''}">
+          <a href="#" th:href="@{/order}"  th:text="#{menu.order}"></a></li>
+          <li th:classappend="${module == 'plan' ? 'active' : ''}">
+          <a href="#" th:href="@{/plan}"  th:text="#{menu.plan}"></a></li>
+          <li th:classappend="${module == 'project' ? 'active' : ''}">
+          <a href="#" th:href="@{/project}"  th:text="#{menu.project}"></a></li>
+          <li th:classappend="${module == 'logs' ? 'active' : ''}">
+          <a href="#" th:href="@{/logs}" th:text="#{menu.logs}"></a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <!--             <li th:if="${#authorization.expression('!isAuthenticated()')}"> -->
+            <a href="/signin" th:href="@{/signin}">
+              <span class="glyphicon glyphicon-log-in" aria-hidden="true" th:inline="text">&nbsp;[[#{action.signin}]] </span>
+            </a>
+          </li>
+          <li>
+            <!--             <li th:if="${#authorization.expression('isAuthenticated()')}"> -->
+            <a href="/logout" th:href="@{#}" onclick="$('#form').submit();">
+              <span class="glyphicon glyphicon-log-out" aria-hidden="true" th:inline="text">&nbsp;[[#{action.logout}]]</span>
+            </a>
+              <form style="visibility: hidden" id="form" method="post"
+              action="#" th:action="@{/logout}"></form>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

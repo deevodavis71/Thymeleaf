@@ -1,0 +1,23 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html>
+<body>
+  <footer class="footer" th:fragment="footer">
+    <nav class="navbar navbar-fixed-bottom">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">&copy; 2017 Airbus</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" th:text="#{lang.change}"> <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#" th:text="#{lang.eng}" id="langEn"></a></li>
+              <li><a href="#" th:text="#{lang.fr}" id="langFr"></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </footer>
+</body>
+  <script type="text/javascript" src="js/languageSupport.js" />
+</html>

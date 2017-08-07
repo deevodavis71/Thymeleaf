@@ -1,0 +1,13 @@
+server:
+  port: 10000
+    
+management:
+  security:
+    enabled: false    
+
+logging:
+  level:
+    root: INFO
+    com:
+      airbus:
+        smartdeploy: DEBUG

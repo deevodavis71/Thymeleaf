@@ -1,0 +1,48 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+    </head>
+    <body>
+      <div id="add" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="addDialogLabel" aria-hidden="true"
+      th:fragment="add-dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h3 id="addDialogLabel">Add</h3>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal">
+                          <div id="addMetawidget" class="container" />
+                       </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" data-dismiss="modal"  onclick="saveAddForm(); return true">Add</button>
+                        <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="edit" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="editDialogLabel" aria-hidden="true"
+        th:fragment="edit-dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h3 id="editDialogLabel">Edit</h3>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal">
+                            <div id="editMetawidget" class="container" />
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary"  data-dismiss="modal"  onclick="saveEditForm(); return true">Save</button>
+                        <button class="btn" data-dismiss="modal" aria-hidden="true" onclick="editFormWidget=null;">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
